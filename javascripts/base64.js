@@ -1,9 +1,9 @@
 var Base64 = {
     decode: function (str) {
-        return atob(str);
+        return decodeURIComponent(escape(window.atob(str)));
     },
 
     encode: function (str) {
-        return btoa(str);
+        return window.btoa(unescape(encodeURIComponent(str)));
     }
 }
